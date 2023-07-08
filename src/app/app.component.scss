@@ -1,0 +1,32 @@
+.card{
+    form{
+        .formGroup{
+            margin: 20px;
+            display: flex;
+            label{
+                margin: 10px;
+                display: block;
+            }
+            .name-input{
+                position: relative;
+            }
+            .single-checkbox,.multiple-checkbox{
+                display: flex;
+            }
+            .radio-button{
+               display: flex 
+            }
+            .uploadImage{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            img{
+                width: 100px;
+            }
+            }
+        }
+        .button{
+            margin: 10px;
+        }
+    }
+}
