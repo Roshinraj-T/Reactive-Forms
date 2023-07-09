@@ -24,6 +24,11 @@
                 width: 100px;
             }
             }
+            .calender{
+                display: flex;
+                gap: 20px;
+                // flex-direction: column;
+            }
         }
         .button{
             margin: 10px;

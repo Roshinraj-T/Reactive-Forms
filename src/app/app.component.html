@@ -92,17 +92,8 @@
     <!-- date picker -->
     <div class="formGroup">
       <div class="calender">
-        <!-- <p-calendar formControlName="datePickerStart" [monthNavigator]="true" [yearNavigator]="true" (onSelect)="setEndDate  ($event)"></p-calendar>
-        <p-calendar formControlName="datePickerEnd" [minDate]="myForm.datePickerStart" [monthNavigator]="true" [yearNavigator]="true"></p-calendar> -->
-        <!-- {{myForm.value.datePickerStart }}
-        {{myForm.value.datePickerEnd}} -->
-        <!-- <h3>Select Start Date:</h3>
-    <input type="text" pCalendar [dateFormat]="'mm dd yy'" [monthNavigator]="true" [yearNavigator]="true" [yearRange]="'2000:2030'" [(ngModel)]="startDate" (onSelect)="setEndDateMinDate($event)" />
-    <h3>Select End Date:</h3>
-    <input type="text" pCalendar [dateFormat]="'mm dd yy'" [monthNavigator]="true" [yearNavigator]="true" [yearRange]="'2000:2030'" [minDate]="endDateMinDate" [(ngModel)]="endDate" />
-    <h3>Selected Dates:</h3>
-    <p>Start Date: {{ startDate | date: 'MM dd yyyy' }}</p>
-    <p>End Date: {{ endDate | date: 'MM dd yyyy' }}</p> -->
+        <p-calendar formControlName="datePickerStart" (onSelect)="onDateChange($event)" [showIcon]="true" [minDate]="FirstminDate" appendTo="body" placeholder="start Date" [readonlyInput]="true"></p-calendar>
+        <p-calendar formControlName="datePickerEnd" [minDate]="minDate" [showIcon]="true" appendTo="body" placeholder="end Date" [readonlyInput]="true"></p-calendar>
       </div>
     </div>
     <div class="button">

@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component,OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import * as moment from 'moment';
 // import { DatePipe } from '@angular/common';
 
 
@@ -24,6 +25,8 @@ export class AppComponent {
   ]
   imageUrl: any;
 
+  minDate!: Date;
+  FirstminDate!: Date
 
   myForm=this.fb.group({
     name:['',Validators.required],
@@ -38,6 +41,16 @@ export class AppComponent {
     datePickerStart:[''],
     datePickerEnd:['']
   })
+
+  ngOnInit(){
+    this.FirstminDate=new Date();
+    // this.minDate=new Date();
+
+    // this.FirstminDate.setDate(this.FirstminDate.getDate())
+    // this.minDate=this.FirstminDate
+  }
+
+  // minDate:any
   constructor(private fb:FormBuilder){}
 
   onSubmit(){
@@ -72,15 +85,11 @@ onUpload(event:any) {
 
 }
 //date picker
-// setEndDateMinDate(event: any) {
-//   this.myForm.controls.endDateMinDate = new Date(event.target.value);
-// }
-// setEndDate(event: any) {
-//   const selectedDate = new Date(event.target.value);
-//   if (selectedDate < this.startDate) {
-//     this.endDate = null;
-//   } else {
-//     this.endDate = selectedDate;
-//   }
-// }
+
+onDateChange(event:any) {
+  if (event) {
+    // Set the minDate for the second calendar based on the selectedDate from the first calendar
+    this.minDate = new Date(event);
+  }
+}
 }
